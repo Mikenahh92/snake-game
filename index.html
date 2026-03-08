@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        <div id="ui-overlay">
+            <div id="score">Score: 0</div>
+            <div id="high-score">High Score: 0</div>
+        </div>
+        <div id="game-over-overlay" class="hidden">
+            <div id="game-over-content">
+                <h2>Game Over!</h2>
+                <p id="final-score">Score: 0</p>
+                <button id="play-again-btn">Play Again</button>
+                <p class="hint">Press SPACE to restart</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Game Modules - Load order matters -->
+    <script src="js/config.js"></script>
+    <script src="js/collision.js"></script>
+    <script src="js/snake.js"></script>
+    <script src="js/food.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

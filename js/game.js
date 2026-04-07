@@ -1,10 +1,27 @@
-// Game Controller Module - Placeholder
-// TODO: Implement main game loop in SNAKE-002
+// Game Controller Module
+// Manages game initialization and main game loop
 
 class Game {
   constructor() {
-    // TODO: Initialize game state
+    this.renderer = null;
+  }
+
+  /**
+   * Initialize the game: set up renderer and canvas.
+   */
+  init() {
+    this.renderer = new Renderer();
+    const success = this.renderer.init();
+    if (!success) {
+      console.error('Game: Renderer initialization failed');
+      return;
+    }
+    console.log('Game initialized successfully');
   }
 }
 
-// Game will be initialized in future stories when game logic is implemented
+// Initialize game when DOM is ready
+document.addEventListener('DOMContentLoaded', function () {
+  const game = new Game();
+  game.init();
+});
